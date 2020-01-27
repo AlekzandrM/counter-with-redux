@@ -1,17 +1,22 @@
 import React from 'react'
+import './counter.css'
 
 class CounterWithRedux extends React.Component{
     render(){
         return(
-            <div>
+            <div className='counter'>
                 <h2>CounterWithRedux</h2>
-                <div>
+                <div className='handlers'>
                     <button>-</button>
                     <span>test</span>
                     <button>+</button>
 
-                    <span>Name: </span>
-                    <p>Age: </p>
+                    <p>
+                        Name:  
+                        <span>
+                            Age: 
+                        </span>
+                    </p>   
                 </div>
             </div>
         )
