@@ -1,10 +1,12 @@
 import React from 'react';
+import CounterWithRedux from './counter/counterWithRedux';
+
 
 
 function App() {
   return (
     <div >
-      Test
+      <CounterWithRedux />
     </div>
   );
 }
