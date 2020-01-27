@@ -9,7 +9,7 @@ class CounterWithRedux extends React.Component{
                 <h2>CounterWithRedux</h2>
                 <div className='handlers'>
                     <button>-</button>
-                    <span>test</span>
+                    <span>{this.props.count.count}</span>
                     <button>+</button>
 
                     <p>
@@ -26,7 +26,8 @@ class CounterWithRedux extends React.Component{
 
 const mapStateToProps = store => {
     return {
-        data: store.data
+        data: store.data,
+        count: store.count
     }    
 }
 
