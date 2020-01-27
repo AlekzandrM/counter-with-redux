@@ -1,5 +1,6 @@
 import React from 'react'
 import './counter.css'
+import { connect } from 'react-redux'
 
 class CounterWithRedux extends React.Component{
     render(){
@@ -12,9 +13,9 @@ class CounterWithRedux extends React.Component{
                     <button>+</button>
 
                     <p>
-                        Name:  
+                        Name: {this.props.data.name}
                         <span>
-                            Age: 
+                            Age: {this.props.data.age}
                         </span>
                     </p>   
                 </div>
@@ -23,4 +24,10 @@ class CounterWithRedux extends React.Component{
     }
 }
 
-export default CounterWithRedux
+const mapStateToProps = store => {
+    return {
+        data: store.data
+    }    
+}
+
+export default connect(mapStateToProps)(CounterWithRedux)
