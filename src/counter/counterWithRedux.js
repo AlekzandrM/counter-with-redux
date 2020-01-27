@@ -8,9 +8,9 @@ class CounterWithRedux extends React.Component{
             <div className='counter'>
                 <h2>CounterWithRedux</h2>
                 <div className='handlers'>
-                    <button>-</button>
+                    <button onClick={this.props.decrement}>-</button>
                     <span>{this.props.count.count}</span>
-                    <button>+</button>
+                    <button onClick={this.props.increment}>+</button>
 
                     <p>
                         Name: {this.props.data.name}
@@ -31,4 +31,11 @@ const mapStateToProps = store => {
     }    
 }
 
-export default connect(mapStateToProps)(CounterWithRedux)
+const mapDispatchToProps = dispatch => {
+    return {
+        increment: () => {dispatch({type: 'INCREMENT'})},
+        decrement: () => {dispatch({type: 'DECREMENT'})}
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CounterWithRedux)
